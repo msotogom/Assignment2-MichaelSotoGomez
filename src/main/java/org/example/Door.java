@@ -9,7 +9,7 @@ public class Door {
     private Chamber chamberB;
     private Monster monster;
 
-    private Door(Chamber a, Chamber b, Monster monster) {
+    public Door(Chamber a, Chamber b, Monster monster) {
         this.chamberA = a;
         this.chamberB = b;
         this.monster = monster;
