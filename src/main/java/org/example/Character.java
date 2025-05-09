@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Characters class that has health, strength, craft, and can hold and equip items.
@@ -99,6 +100,18 @@ public abstract class Character {
         }
         return total;
     }
+
+    /**
+     * Randomized combat score that will be used for fighting
+     *
+     * @return total combat score
+     */
+    public int rollCombatScore(boolean useStrength) {
+        int roll = new Random().nextInt(6) + 1;
+        int stat = useStrength ? getTotalStrength() : getTotalCraft();
+        return roll + stat;
+    }
+
 
     public String getName() {
         return name;
