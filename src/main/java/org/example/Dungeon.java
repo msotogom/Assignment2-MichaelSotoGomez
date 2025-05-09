@@ -64,7 +64,7 @@ public class Dungeon {
 
         // Pick up all items (if any)
         for (Item item : current.getItems()) {
-            actions.add(new Pick(player, item));
+            actions.add(new Pick(player, item,this));
         }
 
         // Add movement/fight actions for each door

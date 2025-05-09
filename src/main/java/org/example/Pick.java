@@ -1,34 +1,27 @@
 package org.example;
 
 /**
- * Action that allows the player to pick up an item
+ * Action to pick up an item from the current chamber.
  */
 public class Pick implements Action {
     private Character player;
     private Item item;
+    private Dungeon dungeon;
 
-    /**
-     * Constructs a Pick action for player and item
-     * @param player the player
-     * @param item   the item being pickled up
-     */
-    public Pick(Character player, Item item) {
+
+    public Pick(Character player, Item item, Dungeon dungeon) {
         this.player = player;
         this.item = item;
+        this.dungeon = dungeon;
     }
 
-    /**
-     * Executes the action: picks up the item and adds it to the player's inventory.
-     */
     @Override
     public void execute() {
         player.pickUpItem(item);
+        dungeon.getCurrentChamber().getItems().remove(item);
         System.out.println(player.getName() + " picked up a " + item.getName());
     }
 
-    /**
-     * Returns a string describing the action.
-     */
     @Override
     public String toString() {
         return "Pick up " + item.getName();
