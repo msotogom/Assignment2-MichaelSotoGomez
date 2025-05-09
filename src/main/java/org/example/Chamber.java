@@ -22,7 +22,6 @@ public class Chamber {
     /**
      * Creates a chamber with one item.
      *
-     * @param item
      */
     public Chamber(Item item) {
         this();
